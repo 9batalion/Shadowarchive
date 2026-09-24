@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#172b46"><meta name="description" content="Lokalne środowisko pracy OSINT. Sprawy, źródła, chronologia i analiza.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src blob:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><title>ShadowArchive · OSINT Workspace</title>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="./icons/apple-touch-icon.png"><link rel="stylesheet" href="./css/app.css"><link rel="stylesheet" href="./css/print.css" media="print">
+<script type="module" src="./js/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<div id="app-shell">
+<aside id="sidebar" aria-label="Nawigacja główna"><a class="brand" href="#dashboard"><span class="brand-mark">S<span>A</span></span><span>ShadowArchive<small>OSINT WORKSPACE</small></span></a><button class="mobile-only close-nav" data-action="menu" aria-label="Zamknij nawigację">×</button><div class="mobile-only mobile-scope"><label for="mobile-scope">Zakres pracy</label><select id="mobile-scope"><option value="">Wszystkie sprawy</option></select></div><div id="navigation"></div><div class="sidebar-foot"><span class="local-dot"></span> Dane na tym urządzeniu <small id="app-version"></small></div></aside>
+<div class="workspace"><header class="topbar"><button class="icon-button mobile-only" data-action="menu" aria-label="Otwórz nawigację">☰</button><button class="search-trigger" data-action="global-search"><span id="search-icon"></span><span>Szukaj w archiwum…</span><kbd>⌘ K</kbd></button><label class="case-switch"><span class="sr-only">Aktywna sprawa</span><select id="case-scope"><option value="">Wszystkie sprawy</option></select></label><button class="primary quick-add" data-action="quick-add"><span aria-hidden="true">＋</span> Dodaj</button></header>
+<div id="update-banner" class="update-banner" hidden>Nowa wersja jest gotowa. <button data-action="update-app">Zapisz i zaktualizuj</button><button data-action="dismiss-update">Później</button></div>
+<div id="network-banner" class="offline-bar" hidden>Tryb offline · pracujesz na lokalnej bazie</div>
+<main id="main" tabindex="-1"><div class="loading">Otwieranie archiwum…</div></main>
+<footer class="workspace-footer"><span>ShadowArchive <span id="footer-version"></span></span><span id="save-state" role="status">Lokalne środowisko pracy</span><button data-action="undo" id="undo-button" disabled>Cofnij ostatnią operację</button></footer></div>
+</div>
+<dialog id="editor" class="editor-dialog" aria-labelledby="editor-title"></dialog>
+<dialog id="utility-dialog" aria-labelledby="utility-title"></dialog>
+<dialog id="picker-dialog" aria-labelledby="picker-title"></dialog>
+<dialog id="lock-dialog" aria-labelledby="lock-title"></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<noscript>Aplikacja wymaga JavaScript i IndexedDB. Dane są przetwarzane lokalnie.</noscript>
+</body></html>

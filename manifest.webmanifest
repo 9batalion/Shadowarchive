@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "ShadowArchive — OSINT Workspace",
+  "short_name": "ShadowArchive",
+  "description": "Lokalne archiwum dochodzeń OSINT, źródeł i analiz.",
+  "lang": "pl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f5f9",
+  "theme_color": "#172b46",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"./icons/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}
