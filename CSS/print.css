@@ -1,0 +1,100 @@
+@page {
+  size: A4;
+  margin: 18mm 16mm
+}
+
+body {
+  background: white !important;
+  color: #111 !important;
+  font-size: 10pt
+}
+
+#sidebar,
+.topbar,
+.workspace-footer,
+.page-heading,
+.toolbar,
+.tabs,
+.no-print,
+#toast,
+dialog,
+.update-banner,
+.offline-bar {
+  display: none !important
+}
+
+.workspace {
+  margin: 0 !important
+}
+
+#main {
+  padding: 0 !important
+}
+
+.report-paper {
+  padding: 0 !important;
+  border: 0 !important;
+  max-width: none !important;
+  box-shadow: none !important;
+  background: white !important;
+  color: #111 !important
+}
+
+.report-paper h1 {
+  font-size: 22pt
+}
+
+.report-paper h2 {
+  font-size: 14pt;
+  break-after: avoid;
+  color: #163052
+}
+
+.report-paper p,
+.report-paper li {
+  orphans: 3;
+  widows: 3
+}
+
+.report-paper a {
+  color: #173a65;
+  text-decoration: none;
+  overflow-wrap: anywhere
+}
+
+.badge {
+  border: 1px solid #bbb !important;
+  color: #222 !important;
+  background: transparent !important;
+  font-size: 8pt
+}
+
+.report-paper section {
+  break-inside: auto
+}
+
+.report-paper .source-entry {
+  break-inside: avoid
+}
+
+.report-paper table {
+  font-size: 9pt
+}
+
+thead {
+  display: table-header-group
+}
+
+tr {
+  break-inside: avoid
+}
+
+.report-kicker {
+  color: #444
+}
+
+.report-cover {
+  border-bottom: 2px solid #173a65;
+  padding-bottom: 20px;
+  margin-bottom: 25px
+}
