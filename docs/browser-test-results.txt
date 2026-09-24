@@ -1,0 +1,18 @@
+PASS · IndexedDB: utworzenie, edycja, historia i konflikt rewizji · 10 ms 
+PASS · Kosz, przywracanie i ochrona referencji · 13 ms 
+PASS · Szkic długiej notatki jest trwały · 1 ms 
+PASS · Fakty wymagają źródła; potwierdzona hipoteza pozostaje hipotezą · 3 ms 
+PASS · Pełny backup, walidacja, import i przepisanie kolidujących ID · 11 ms 
+SKIP · Web Crypto: środowisko HTTP. Test we właściwym kontekście HTTPS / localhost.
+PASS · Markdown: tabele, linki rekordów i neutralizacja XSS · 1 ms 
+PASS · Dork Builder różnicuje silniki i ograniczenia dat · 0 ms 
+PASS · Raport: kategorie rozdzielone, źródła i załączniki · 1 ms 
+PASS · Widoki: formularz dorków, dashboard, karta i tagi renderują poprawny HTML · 15 ms 
+PASS · 40 100 rekordów: import do IndexedDB · 4527 ms 100 spraw + 10 000 źródeł + 5 000 osób + 5 000 organizacji + 20 000 relacji
+PASS · 40 100+ rekordów: odczyt i indeks Worker · 835 ms 40110 rekordów; zapytanie po indeksacji: 253 ms
+PASS · Paginacja globalnej wyszukiwarki przy 40 100+ rekordach · 334 ms 
+PASS · Jakość danych i duplikaty przy pełnym wolumenie · 219 ms 55010 kontroli, 2 par duplikatów
+PASS · Graf: 20 000 relacji, ograniczenie renderowania, canvas i inspektor · 37 ms 
+PASS · Timeline: chronologia, filtry i zakresy czasu · 585 ms 
+PASS · Migracja schematu v1 → v2 zachowuje rekordy · 64 ms 
+SKIP · PWA instalacja / offline: wymagane HTTPS lub localhost. Logika cache testowana osobno.

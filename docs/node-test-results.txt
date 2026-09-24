@@ -1,0 +1,29 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> shadowarchive-osint@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ Atomic save and encrypted full backup roundtrip with original file (187.983205ms)
+✔ Partial draft includes its original attachment in backup and import (3.278067ms)
+✔ Validation rejects missing files, changed bytes, unsafe records and invalid drafts (4.241692ms)
+✔ Import transaction rolls back all writes on a duplicate key (1.728158ms)
+✔ Multipart backup reconstructs a file across 16 MiB boundaries; detects incomplete or corrupted sets (7730.876813ms)
+✔ Encrypted multipart files require the correct password and reconstruct unchanged content (441.991694ms)
+✔ All schema defaults and demo records pass validation (4.282954ms)
+✔ Epistemic invariants: hypothesis and claim never silently become facts (0.292251ms)
+✔ Unsafe URL schemes and invalid relation structure rejected (0.381656ms)
+✔ SHA-256 matches published abc test vector; original bytes retained (7.34112ms)
+✔ AES-GCM encrypted backup roundtrip, randomized parameters and rejection paths (433.237005ms)
+✔ Duplicate detection suggests normalized URLs, hashes and name variants (1.811234ms)
+✔ Data quality measures documentation, never truth (0.588909ms)
+Worker init + search 40,100 records: 187 ms
+✔ Worker indexes 40,100 records, variants, phrases, tags, scope and pagination (223.245668ms)
+✔ Manifest and service worker assets resolve at a repository subpath (19.493892ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8495.998421
