@@ -2,7 +2,7 @@
 
 Lokalne środowisko do codziennego researchu OSINT. Wersja **1.0.0**, interfejs po polsku. Aplikacja jest statyczna, przechowuje dane w IndexedDB i działa na GitHub Pages.
 
-**Publikacja i użytkowanie nie wymagają Node.js, npm, backendu, płatnych API ani budowania projektu.** Pliki `package.json`, `package-lock.json` i `tests/` dotyczą wyłącznie opcjonalnych testów i podglądu deweloperskiego.
+**Publikacja i użytkowanie nie wymagają Node.js, npm, backendu, płatnych API ani budowania projektu.** Pliki `package.json` i `package-lock.json` dotyczą wyłącznie opcjonalnych testów i podglądu deweloperskiego.
 
 ## Funkcje
 
@@ -48,7 +48,7 @@ Kategorię ustalenia wybiera się w module **Ustalenia**. Hipotezy i twierdzenia
 13. Otwórz go przez HTTPS i przy pierwszym uruchomieniu pozostaw połączenie online, aby pobrać cache.
 14. Utwórz testową sprawę, przeładuj aplikację i sprawdź, czy pozostała. Wykonaj pierwszy backup.
 
-Ścieżki są względne, a routing używa `#...`. Obsługiwany jest katalog repozytorium, nie tylko korzeń domeny. Publikacja nie wymaga reguł przekierowania ani kompilacji. Folderów `tests/` i `docs/` oraz plików npm nie trzeba publikować do działania samej aplikacji.
+Ścieżki są względne, a routing używa `#...`. Obsługiwany jest katalog repozytorium, nie tylko korzeń domeny. Publikacja nie wymaga reguł przekierowania ani kompilacji. Pliki testowe i dokumentacyjne można pozostawić w tym samym folderze albo pominąć przy publikacji; sama aplikacja nie wymaga npm.
 
 Na iPhone pierwsze przesłanie całego folderu do GitHub może być niewygodne; najłatwiej wykonać je z komputera. Codzienna praca działa potem normalnie z telefonu.
 
@@ -140,7 +140,7 @@ Import **dodaje**, nie synchronizuje i nie zastępuje obecnej bazy. Kolizja ID t
 
 Eksport sprawy/rekordu dołącza zależności wskazane w odwołaniach, także spoza tej sprawy. Sprawdź zakres przed udostępnieniem. Preferencje w kopii są informacyjne; ustawienia bezpieczeństwa nie są importowane automatycznie.
 
-Format własnych rekordów: [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md). CSV i Markdown służą do analizy/czytania, a nie pełnego przywracania.
+Format własnych rekordów: [DATA_FORMAT.md](DATA_FORMAT.md). CSV i Markdown służą do analizy/czytania, a nie pełnego przywracania.
 
 ## Wyszukiwanie, notatki i graf
 
@@ -181,21 +181,22 @@ Blokada hasłem chroni widok, nie dane na dysku. IndexedDB i szkice pozostają j
 
 Repozytoria GitHub Pages użytkownika dzielą origin. Nazwy baz są oddzielone ścieżką, ale kod innej strony na tym samym originie może mieć dostęp do pamięci. Do wymagającej pracy używaj kontrolowanej domeny i osobnego profilu. Aplikacja nie jest systemem wieloosobowym ani certyfikowanym systemem dowodowym.
 
-Testy nie są gwarancją wieloletniej niezawodności. Nie sprawdzano fizycznego iPhone'a/Safari/Androida. Zakres wykonanej weryfikacji opisuje [docs/TEST_REPORT.md](docs/TEST_REPORT.md).
+Testy nie są gwarancją wieloletniej niezawodności. Nie sprawdzano fizycznego iPhone'a/Safari/Androida. Zakres wykonanej weryfikacji opisuje [TEST_REPORT.md](TEST_REPORT.md).
 
 ## Pliki i opcjonalne narzędzia deweloperskie
 
 ```text
-shadowarchive/
+ShadowArchive-OSINT-PWA/
   index.html, manifest.webmanifest, sw.js, .nojekyll
-  css/        motywy, mobile, wydruk
-  js/         moduły ES aplikacji
-  icons/      SVG, PNG i Apple touch icon
-  docs/       model, format danych, raport testów
-  tests/      testy i lokalny serwer podglądu
-  README.md
-  package.json, package-lock.json   tylko opcjonalne testy
+  app.js, schema.js, db.js, ...         moduły aplikacji
+  app.css, print.css                    style
+  icon.svg, icon-192.png, ...           ikony
+  ARCHITECTURE.md, DATA_FORMAT.md, ...  dokumentacja
+  browser-tests.js, unit.test.mjs, ...  testy opcjonalne
+  README.md, package.json               instrukcja i narzędzia opcjonalne
 ```
+
+Wersja dostarczona jako ZIP jest celowo płaska: nie zawiera podfolderów. Wszystkie ścieżki aplikacji są względne do tego jednego folderu.
 
 **Brak zależności runtime.** `fake-indexeddb` jest przypiętą zależnością testów Node; przeglądarka jej nie ładuje.
 
@@ -205,9 +206,9 @@ Podgląd lokalny bez instalowania pakietów:
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Otwórz `http://localhost:8080/`. Alternatywnie, mając Node: `npm run dev`, potem `http://localhost:4173/`. Serwer Node obsługuje też testowe `/repo/` dla ścieżki repozytorium.
+Otwórz `http://localhost:8080/`. Alternatywnie, mając Node: `npm run dev`, potem `http://localhost:4173/`.
 
-Testy przeglądarkowe: otwórz przez serwer `tests/index.html` i uruchom testy izolowanej bazy. Generują ponad 40 tys. rekordów w osobnej bazie o losowej nazwie. Nie zastępują archiwum; mogą chwilowo obciążyć urządzenie.
+Testy przeglądarkowe: otwórz przez serwer `tests-index.html` i uruchom testy izolowanej bazy. i uruchom testy izolowanej bazy. Generują ponad 40 tys. rekordów w osobnej bazie o losowej nazwie. Nie zastępują archiwum; mogą chwilowo obciążyć urządzenie.
 
 Opcjonalne pełne testy Node:
 
@@ -216,7 +217,7 @@ npm ci --ignore-scripts
 npm test
 ```
 
-Podstawowy zestaw bez instalowania zależności: `node --test tests/unit.test.mjs`.
+Podstawowy zestaw bez instalowania zależności: `node --test unit.test.mjs`.
 
 Kontrola offline na docelowym HTTPS: po załadowaniu odwiedź moduły, wyłącz sieć, przeładuj, dodaj notatkę, ponownie ją otwórz, przywróć sieć i wykonaj backup. Test aktualizacji wymaga opublikowania nowego `RELEASE`.
 
@@ -224,7 +225,7 @@ Kontrola offline na docelowym HTTPS: po załadowaniu odwiedź moduły, wyłącz 
 
 - [GitHub Pages — źródło publikacji](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 - [GitHub Pages — utworzenie strony](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
-- [MDN — aktualizacja Service Workera](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/update)
+- [MDN — aktualizacja Service Workera](https://developer.mozilla.org/en-US/Web/API/ServiceWorkerRegistration/update)
 - [Yandex — daty, języki i typy](https://yandex.com/support/search/en/query-language/search-operators)
 - [Brave — operatory](https://search.brave.com/help/operators)
 - [DuckDuckGo — składnia](https://duckduckgo.com/duckduckgo-help-pages/results/syntax)

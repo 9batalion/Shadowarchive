@@ -2,12 +2,12 @@
 const RELEASE = '1.0.0-r1';
 const PREFIX = 'shadowarchive:' + self.registration.scope + ':';
 const CACHE = PREFIX + RELEASE;
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './css/app.css', './css/print.css',
-  './js/ids.js', './js/app.js', './js/schema.js', './js/db.js', './js/state.js', './js/ui.js',
-  './js/editor.js', './js/views.js', './js/graph.js', './js/report.js', './js/quality.js', './js/dork.js',
-  './js/settings.js', './js/security.js', './js/crypto.js', './js/multipart.js', './js/transfer.js',
-  './js/search.js', './js/search-worker.js', './js/demo.js', './js/pwa.js', './icons/icon.svg',
-  './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png'
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './app.css', './print.css',
+  './ids.js', './app.js', './schema.js', './db.js', './state.js', './ui.js',
+  './editor.js', './views.js', './graph.js', './report.js', './quality.js', './dork.js',
+  './settings.js', './security.js', './crypto.js', './multipart.js', './transfer.js',
+  './search.js', './search-worker.js', './demo.js', './pwa.js', './icon.svg',
+  './icon-192.png', './icon-512.png', './maskable-512.png', './apple-touch-icon.png'
 ];
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(
   p => new Request(new URL(p, self.registration.scope), {
